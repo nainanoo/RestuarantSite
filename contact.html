@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+    <link href="styles/RestaurantStyles.css" rel="stylesheet" type="text/css" />
+    <style>
+    label, fieldset{
+    font-size: 1.1em;
+    }
+    input[type=text] {
+    border: 2px solid #0d1f2d;
+    width: 50%;
+    padding: 8px 8px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    }
+    fieldset {
+    background-color: #fef9ff;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing:	border-box;
+    }
+    select, textarea {
+    margin: 12px 0;
+    font-size: 1em;
+    }
+    textarea {
+    width: 100%;
+    height: 200px;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 2px solid #0d1f2d;
+    border-radius: 3px;
+    background-color: #fff;
+    resize: none;
+    }
+    input:required{
+      font-weight: bold;
+    }
+    input[type=submit]:hover {
+    background-color: #f2eded;
+    color: #546a7b;
+    }
+    input[type=submit] {
+    font-size: 1.2em;
+    background-color: #546a7b;
+    color: #fef9ff;
+    padding: 4px 8px;
+    }
+    </style>
+  <head>
+
+  <body>
+    <main>
+      <header>
+        <h1>Contact Me</h1>
+      </header>
+
+      <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <h2>Information Request</h2>
+      <p>Required fields are bold</p>
+
+      <form action="submit.html" method="POST">
+        <label for="firstName"><strong>First Name:</strong></label><br />
+        <input type="text" id="firstName" name="firstName" style="font-weight:bold" required><br />
+        <label for="lastName"><strong>Last Name:</strong></label><br />
+        <input type="text" id="lastName" name="lastName" style="font-weight:bold" required><br />
+        <label for="phone"><strong>Phone Number:</strong></label><br />
+        <input type="text" id="phone" name="phone"style="font-weight:bold" required><br />
+        <label for="contact">Best time to call:</label><br />
+
+        <select id="contact" name="contact">
+          <option value="default" selected>--Select One--</option>
+          <option value="morning">Morning (8AM to 12PM Eastern)</option>
+          <option value="afternoon">Afternoon (12PM to 5PM Eastern)</option>
+          <option value="evening">Evening (5PM to 8PM Eastern)</option>
+        </select>
+
+        <label for="info">Additional Information</label><br />
+        <textarea id="info" name="info"></textarea>
+        <input type="submit" name="submit" value="Submit">

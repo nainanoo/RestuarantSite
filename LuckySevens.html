@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Lucky Sevens</title>
+    <script type="text/javascript">
+        function placeStartingBet() {
+            var startingBet= document.getElementById("inputBet").value;
+            var gameMoney=startingBet;
+            var totalRolls=0;
+            var highestAmount=0;
+            var rollsHighestAmount=0;
+            var newGameMoney=0;
+            if (startingBet<=0){
+              alert("A starting bet over $0 is required to play.")
+            }
+            else {
+              while(gameMoney>0){
+              rollNum=rollDice();
+
+                if (rollNum==7){
+                gameMoney=gameMoney+4;
+                totalRolls++;
+
+                  if(gameMoney>highestAmount){
+                    highestAmount=gameMoney;
+                    rollsHighestAmount=totalRolls;
+                  }
+                  else{
+                    gameMoney=gameMoney;
+                  }
+                }
+                else{
+                gameMoney=gameMoney-1;
+                totalRolls++;
+                }
+              }
+
+              console.log(startingBet);
+              console.log(totalRolls);
+              console.log(highestAmount);
+              console.log(rollsHighestAmount);
+
+              return startingBet;
+              return totalRolls;
+              return highestAmount;
+              return rollsHighestAmount;
+            }
+        }
+        function rollDice(){
+          return (Math.floor(Math.random()*6)+1)+(Math.floor(Math.random()*6)+1);
+        }
+
+    </script>
+    <style>
+      body{
+        text-align:center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Lucky Sevens</h1>
+        <div>
+            Starting Bet: <input type="text" id="inputBet" />
+            <p><button onclick="placeStartingBet();">Play</button></p>
+
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td>Starting Bet</td>
+              <td> </script></td>
+            </tr>
+            <tr>
+              <td>Total Rolls Before Going Broke</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>Highest Amount Won</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Roll Count at Highest Amount Won</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+    </hr>
+    <h1>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
